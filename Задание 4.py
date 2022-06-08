@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from tkinter import Tk, Canvas, ARC
+from tkinter import PhotoImage, Tk, Canvas, ARC
 
 
 if __name__ == '__main__':
@@ -12,25 +12,34 @@ if __name__ == '__main__':
     c = Canvas(root, width=900, height=500, bg='white')
     c.pack()
 
-    c.create_oval(683, 18, 750, 84, fill="#FFFF00")
-    c.create_rectangle(529, 143, 640, 360, fill='orange')
-    c.create_polygon(580, 30, 490, 144, 675, 143, fill='#804040')
+    # Создаем основу дома и солнце
+    c.create_oval(383, 18, 450, 84, fill="#FFFF00")
+    c.create_rectangle(129, 143, 340, 360, fill='orange')
+    c.create_polygon(232, 30, 90, 144, 375, 143, fill='#804040')
 
-    c.create_rectangle(540, 160, 630, 227, fill='white')
-    c.create_rectangle(580, 250, 630, 350, fill='#231111')
+    # Создаем кота
+    img = PhotoImage(file='1.png')
+    #c.create_image(640, 270, image=img)
 
-    c.create_arc(220,454, 400,180, fill="#c6dcdf", outline="#313939", width=3, start=-48, extent=90)
-    c.create_polygon(120,420, 170,50, 220,130, 270,130, 320,50, 370,420, outline="#313939", width=3, fill='#a3bcbf')
-    c.create_oval(175,160, 245, 230, fill="#fff", outline="#313939", width=3)
-    c.create_oval(245,160, 315,230, fill="#fff", outline="#313939", width=3 )
-    c.create_oval(213,192, 223,202, fill="#000")
-    c.create_oval(264,192, 274,202, fill="#000")
-    c.create_oval(235,212, 255,232, fill="#e4aaaa", outline="#313939", width=3)
-    c.create_line(245,232, 245, 285, width=3)
-    c.create_arc(210,285, 280,245, start=-10, extent=-160, style=ARC, width=3)
-    c.create_oval(185,390, 245, 430, fill='#a3bcbf', outline="#313939", width=3 )
-    c.create_oval(245,390, 305, 430, fill='#a3bcbf', outline="#313939", width=3 )
+    c.create_polygon(526, 180, 528, 165, 530, 155, 528, 145, 525, 139, 535, 130, 550, 121, 565,
+    112, 575, 104, 570, 94, 551, 91, 536, 93, 521, 97, 506, 101, 486, 105, 471, 108, 456, 111,
+    446, 114, 436, 119, 426, 124, 416, 133, 406, 142, 406, 167, 420, 172, 440, 172, 458, 174,
+    470, 177, 484, 207, 490, 257, 492, 277, 497, 287, 504, 297, 520, 307, 535, 317, 543, 320,
+    547, 335, 557, 346, 567, 357, 588, 370, 584, 420, 580, 420, 540, 430, 520, 445, 622, 445,
+    631, 360, 647, 370, 644, 420, 640, 420, 600, 430, 580, 445, 680, 445, 694, 354, 689, 345,
+    685, 330, 689, 315, 700, 300, 718, 273, 830, 230, 850, 223, 880, 190, 815, 210, 750, 217,
+    530, 204, 530, 200, fill="#fba94f")
+    c.create_oval(450, 135, 460, 145, fill="black")
+    c.create_arc(580, 465, 650, 425, start=180, extent=-110, style=ARC, width=1, outline='black')
 
+
+    # Добавляем детали к дому
+    c.create_rectangle(200, 160, 265, 227, fill='white')
+    c.create_line(232, 160, 232, 227)
+    c.create_line(200, 195, 265, 195)
+    c.create_rectangle(260, 250, 315, 355, fill='#753313')
+    c.create_oval(298, 305, 308, 315, fill="black")
+    
     x = 0
     while x < 900:
         c.create_arc(x, 555, x+90, 450, start=180, extent=-80, style=ARC, width=3, outline='green')
